@@ -11,20 +11,18 @@ import lombok.Setter;
 public class Credentials {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idCred;
-    private String user_;
-    private String pass_;
+    private Integer id;
+    private String pass;
     private String email;
     private Integer userID;
 
-    public Credentials(Integer idCred, String user_, String pass_, String email, Integer userID) {
-        this.idCred = idCred;
-        this.user_ = user_;
-        this.pass_ = pass_;
+    public Credentials(Integer id, String pass, String email, Integer userID) {
+        this.id = id;
+        this.pass = pass;
         this.email = email;
         this.userID = userID;
     }
-    
+
     public Credentials() {
     }
     

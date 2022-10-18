@@ -12,7 +12,7 @@ public class Attributes {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idAttr;
+    private Integer id;
     private String firstName;
     private String lastName;
     private String prof;
@@ -24,8 +24,8 @@ public class Attributes {
     private String about;
     private Integer userId;
 
-    public Attributes(Integer idAttr, String firstName, String lastName, String prof, String urlImage, String urlBack, String city, String country, String university, String about, Integer userId) {
-        this.idAttr = idAttr;
+    public Attributes(Integer id, String firstName, String lastName, String prof, String urlImage, String urlBack, String city, String country, String university, String about, Integer userId) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.prof = prof;
@@ -37,9 +37,7 @@ public class Attributes {
         this.about = about;
         this.userId = userId;
     }
-
-   
-
+    
     public Attributes() {
     }
     

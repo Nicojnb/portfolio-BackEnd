@@ -11,7 +11,7 @@ import lombok.Setter;
 public class Socials {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idSocial;
+    private Integer id;
     private String name;
     private String url;
     private String icon;
@@ -19,8 +19,8 @@ public class Socials {
     private String color;
     private Integer userId;
 
-    public Socials(Integer idSocial, String name, String url, String icon, String title, String color, Integer userId) {
-        this.idSocial = idSocial;
+    public Socials(Integer id, String name, String url, String icon, String title, String color, Integer userId) {
+        this.id = id;
         this.name = name;
         this.url = url;
         this.icon = icon;

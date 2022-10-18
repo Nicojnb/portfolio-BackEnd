@@ -14,7 +14,7 @@ public class ExperienceService implements IExperienceService{
 
     @Override
     public List<Experience> getExperience(Integer persId) {
-        return experienceRep.findAll();
+        return experienceRep.findAllByUserId(persId);
     }
 
     @Override

@@ -14,7 +14,7 @@ public class StudiesService implements IStudiesService{
 
     @Override
     public List<Studies> getStudies(Integer persId) {
-        return studiesRep.findAll();
+        return studiesRep.findAllByUserId(persId);
     }
 
     @Override

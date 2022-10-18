@@ -14,7 +14,7 @@ public class AchievService implements IAchievService{
     
     @Override
     public List<Achievements> getAchiev(Integer persId) {
-        return achievRep.findAll();
+        return achievRep.findAllByUserId(persId);
     }
 
     @Override

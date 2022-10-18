@@ -14,7 +14,7 @@ public class AttributeService implements IAttributeService{
 
     @Override
     public List<Attributes> getAttrib(Integer persId) {
-        return attribRep.findAll();
+        return attribRep.findAllByUserId(persId);
     }
 
     @Override

@@ -14,7 +14,7 @@ public class AttitudesService implements IAttitudesService{
 
     @Override
     public List<Attitudes> getAttit(Integer persId) {
-        return attitudRep.findAll();
+        return attitudRep.findAllByUserId(persId);
     }
 
     @Override

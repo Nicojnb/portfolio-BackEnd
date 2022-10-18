@@ -11,15 +11,15 @@ import lombok.Setter;
 public class Studies {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idStud;
+    private Integer id;
     private String whereStud;
     private String title;
     private Integer startStud;
     private Integer endStud;
     private Integer userId;
 
-    public Studies(Integer idStud, String whereStud, String title, Integer startStud, Integer endStud, Integer userId) {
-        this.idStud = idStud;
+    public Studies(Integer id, String whereStud, String title, Integer startStud, Integer endStud, Integer userId) {
+        this.id = id;
         this.whereStud = whereStud;
         this.title = title;
         this.startStud = startStud;
