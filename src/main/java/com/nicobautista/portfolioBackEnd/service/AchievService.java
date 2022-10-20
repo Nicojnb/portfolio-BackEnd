@@ -13,8 +13,8 @@ public class AchievService implements IAchievService{
     public AchievRep achievRep;
     
     @Override
-    public List<Achievements> getAchiev(Integer persId) {
-        return achievRep.findAllByUserId(persId);
+    public List<Achievements> getAchiev() {
+        return achievRep.findAll();
     }
 
     @Override
@@ -24,7 +24,7 @@ public class AchievService implements IAchievService{
     
     @Override
     public void updateAchiev(Achievements ach) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        achievRep.save(ach);
     }
     
     @Override

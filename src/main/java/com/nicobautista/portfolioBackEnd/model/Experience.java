@@ -13,18 +13,18 @@ public class Experience {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String whereJob;
-    private String roleJob;
-    private Date startJob;
-    private Date endJob;
+    private String name;
+    private String role;
+    private Date start;
+    private Date end;
     private Integer userId;
 
-    public Experience(Integer id, String whereJob, String roleJob, Date startJob, Date endJob, Integer userId) {
+    public Experience(Integer id, String name, String role, Date start, Date end, Integer userId) {
         this.id = id;
-        this.whereJob = whereJob;
-        this.roleJob = roleJob;
-        this.startJob = startJob;
-        this.endJob = endJob;
+        this.name = name;
+        this.role = role;
+        this.start = start;
+        this.end = end;
         this.userId = userId;
     }
 

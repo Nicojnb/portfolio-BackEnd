@@ -13,8 +13,8 @@ public class SocialsService implements ISocialsService{
     public SocialsRep socialsRep;
     
     @Override
-    public List<Socials> getSocials(Integer userId) {
-        return socialsRep.findAllByUserId(userId);
+    public List<Socials> getSocials() {
+        return socialsRep.findAll();
     }
 
     @Override
@@ -24,7 +24,7 @@ public class SocialsService implements ISocialsService{
 
     @Override
     public void updateSocial(Socials soc) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        socialsRep.save(soc);
     }
 
     @Override

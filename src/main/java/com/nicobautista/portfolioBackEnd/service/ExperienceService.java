@@ -13,8 +13,8 @@ public class ExperienceService implements IExperienceService{
     public ExperienceRep experienceRep;
 
     @Override
-    public List<Experience> getExperience(Integer persId) {
-        return experienceRep.findAllByUserId(persId);
+    public List<Experience> getExperience() {
+        return experienceRep.findAll();
     }
 
     @Override
@@ -24,7 +24,7 @@ public class ExperienceService implements IExperienceService{
 
     @Override
     public void updateExperience(Experience exp) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        experienceRep.save(exp);
     }
 
     @Override

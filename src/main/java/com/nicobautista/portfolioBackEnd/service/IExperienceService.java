@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface IExperienceService {
     
-    public List<Experience>getExperience(Integer persId);
+    public List<Experience>getExperience();
     
     public void createExperience(Experience exp);
     

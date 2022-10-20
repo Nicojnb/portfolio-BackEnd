@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface IAttitudesService {
     
-    public List<Attitudes>getAttit(Integer persId);
+    public List<Attitudes>getAttit();
     
     public void createAttit(Attitudes attit);
     

@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface IAttributeService {
     
-    public List<Attributes>getAttrib(Integer persId);
+    public List<Attributes> getAttrib();
     
     public void createAttrib(Attributes attrib);
     

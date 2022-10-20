@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/experience")
 public class ExperienceController{
@@ -21,10 +23,10 @@ public class ExperienceController{
     @Autowired
     private IExperienceService experienceService;
     
-    @GetMapping("/{Id}")
+    @GetMapping("/")
     @ResponseBody
-    public List<Experience> get(@PathVariable Integer Id) {
-        return experienceService.getExperience(Id);
+    public List<Experience> get() {
+        return experienceService.getExperience();
     }
 
     @PostMapping("/add")

@@ -13,8 +13,8 @@ public class AttitudesService implements IAttitudesService{
     public AttitudRep attitudRep;
 
     @Override
-    public List<Attitudes> getAttit(Integer persId) {
-        return attitudRep.findAllByUserId(persId);
+    public List<Attitudes> getAttit() {
+        return attitudRep.findAll();
     }
 
     @Override
@@ -24,7 +24,7 @@ public class AttitudesService implements IAttitudesService{
 
     @Override
     public void updateAttit(Attitudes attit) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        attitudRep.save(attit);
     }
 
     @Override

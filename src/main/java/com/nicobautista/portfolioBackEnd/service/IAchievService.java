@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface IAchievService {
     
-    public List<Achievements>getAchiev(Integer persId);
+    public List<Achievements>getAchiev();
     
     public void createAchiev(Achievements ach);
     

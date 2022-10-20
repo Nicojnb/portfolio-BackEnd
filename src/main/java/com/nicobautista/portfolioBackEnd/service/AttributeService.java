@@ -13,8 +13,8 @@ public class AttributeService implements IAttributeService{
     public AttribRep attribRep;
 
     @Override
-    public List<Attributes> getAttrib(Integer persId) {
-        return attribRep.findAllByUserId(persId);
+    public List<Attributes> getAttrib() {
+        return attribRep.findAll();
     }
 
     @Override
@@ -24,7 +24,8 @@ public class AttributeService implements IAttributeService{
 
     @Override
     public void updateAttrib(Attributes attrib) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        attribRep.save(attrib);
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override

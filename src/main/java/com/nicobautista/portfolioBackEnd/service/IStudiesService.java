@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface IStudiesService {
             
-    public List<Studies>getStudies(Integer persId);
+    public List<Studies>getStudies();
     
     public void createStudy(Studies stud);
     

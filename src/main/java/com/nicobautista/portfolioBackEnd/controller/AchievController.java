@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/achievs")
 public class AchievController {
@@ -21,10 +23,10 @@ public class AchievController {
     @Autowired
     private IAchievService achievService;
     
-    @GetMapping("/{Id}")
+    @GetMapping("/")
     @ResponseBody
-    public List<Achievements> getAchiev(@PathVariable Integer Id){
-        return achievService.getAchiev(Id);
+    public List<Achievements> getAchiev(){
+        return achievService.getAchiev();
     }
     
     @PostMapping("/add")

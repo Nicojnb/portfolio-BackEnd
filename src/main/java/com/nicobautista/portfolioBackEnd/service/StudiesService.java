@@ -13,8 +13,8 @@ public class StudiesService implements IStudiesService{
     public StudiesRep studiesRep;
 
     @Override
-    public List<Studies> getStudies(Integer persId) {
-        return studiesRep.findAllByUserId(persId);
+    public List<Studies> getStudies() {
+        return studiesRep.findAll();
     }
 
     @Override
@@ -24,7 +24,7 @@ public class StudiesService implements IStudiesService{
 
     @Override
     public void updateStudy(Studies stud) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        studiesRep.save(stud);
     }
 
     @Override

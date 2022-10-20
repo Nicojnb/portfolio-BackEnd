@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/socials")
 public class SocialController{
@@ -21,10 +23,10 @@ public class SocialController{
     @Autowired
     private ISocialsService socialsService;
     
-    @GetMapping("/{Id}")
+    @GetMapping("/")
     @ResponseBody
-    public List<Socials> getSocials(@PathVariable Integer Id){
-        return socialsService.getSocials(Id);
+    public List<Socials> getSocials(){
+        return socialsService.getSocials();
     }
     
     @PostMapping("/add")

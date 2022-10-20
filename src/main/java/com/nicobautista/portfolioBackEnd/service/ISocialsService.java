@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface ISocialsService {
         
-    public List<Socials>getSocials(Integer persId);
+    public List<Socials>getSocials();
     
     public void createSocial(Socials soc);
     

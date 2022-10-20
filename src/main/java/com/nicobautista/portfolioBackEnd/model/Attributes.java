@@ -18,20 +18,20 @@ public class Attributes {
     private String prof;
     private String urlImage;
     private String urlBack;
-    private String city;
+    private String state;
     private String country;
     private String university;
     private String about;
     private Integer userId;
 
-    public Attributes(Integer id, String firstName, String lastName, String prof, String urlImage, String urlBack, String city, String country, String university, String about, Integer userId) {
+    public Attributes(Integer id, String firstName, String lastName, String prof, String urlImage, String urlBack, String state, String country, String university, String about, Integer userId) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.prof = prof;
         this.urlImage = urlImage;
         this.urlBack = urlBack;
-        this.city = city;
+        this.state = state;
         this.country = country;
         this.university = university;
         this.about = about;
