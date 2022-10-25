@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 public class JwtFilter extends OncePerRequestFilter{
@@ -35,8 +36,8 @@ public class JwtFilter extends OncePerRequestFilter{
                         new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
                 SecurityContextHolder.getContext().setAuthentication(authenticationToken);
             }
-        } catch (Exception e) {
-            logger.error("error en filtrado");
+        } catch (UsernameNotFoundException e) {
+            logger.error("error en filtrado: " +e.getMessage());
         }
         filterChain.doFilter(request, response);
     }

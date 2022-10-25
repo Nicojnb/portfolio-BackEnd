@@ -4,6 +4,7 @@ import com.nicobautista.portfolioBackEnd.model.Studies;
 import com.nicobautista.portfolioBackEnd.service.IStudiesService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,17 +29,20 @@ public class StudyController{
     public List<Studies> get() {
         return studiesService.getStudies();
     }
-
+    
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/add")
     public void add(@RequestBody Studies stu) {
         studiesService.createStudy(stu);
     }
-
+    
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/edit")
     public void edit(@RequestBody Studies stu) {
         studiesService.updateStudy(stu);
     }
-
+    
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/delete/{Id}")
     public void erase(@PathVariable Integer Id) {
         studiesService.deleteStudy(Id);

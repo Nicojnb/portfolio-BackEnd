@@ -4,6 +4,7 @@ import com.nicobautista.portfolioBackEnd.model.Attitudes;
 import com.nicobautista.portfolioBackEnd.service.IAttitudesService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,17 +29,20 @@ public class AttitudController{
     public List<Attitudes> get() {
         return attitudesService.getAttit();
     }
-
+    
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/add")
     public void add(@RequestBody Attitudes obj) {
         attitudesService.createAttit(obj);
     }
-
+    
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/edit")
     public void edit(@RequestBody Attitudes obj) {
         attitudesService.updateAttit(obj);
     }
-
+    
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/delete/{Id}")
     public void erase(@PathVariable Integer Id) {
         attitudesService.deleteAttit(Id);

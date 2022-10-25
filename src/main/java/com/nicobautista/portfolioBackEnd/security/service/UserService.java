@@ -15,15 +15,15 @@ public class UserService {
     UserRepository userRepository;
     
     public Optional<User> getByUserName(String userName){
-        return userRepository.findByNameUser(userName);
+        return userRepository.findByUserName(userName);
     }
     
     public boolean checkUserName(String userName){
-        return userRepository.existByNameUser(userName);
+        return userRepository.existsByUserName(userName);
     }
     
     public boolean checkEmail(String email){
-        return userRepository.existByEmail(email);
+        return userRepository.existsByEmail(email);
     }
     
     public void save(User user){
